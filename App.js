@@ -7,6 +7,7 @@ import GameOverScreen from './screens/GameOver';
 import StartGameScreen from './screens/StartGameScreen';
 import {useFonts}  from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { StatusBar } from "expo-status-bar";
 export default function App() {
   const [userNumber, setUserNumber] = useState();
   const [gameIsOver, setGameIsOver] = useState(true);
@@ -42,6 +43,8 @@ function pickedNumberHandler(pickedNumber) {
   }
 
   return (
+    <>
+    <statusbar style="light"/>
     <LinearGradient
       colors={[Colors.primary700, Colors.accent500]}
       style={styles.rootScreen}
@@ -55,6 +58,7 @@ function pickedNumberHandler(pickedNumber) {
         <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
       </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 
